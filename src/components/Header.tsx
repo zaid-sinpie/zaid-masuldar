@@ -1,5 +1,46 @@
 import { Button } from "../../components/ui/button";
 
+// const Nav = () => {
+//   return (
+//     <nav className="hidden items-center gap-10 md:flex">
+//       <a
+//         href="/about"
+//         className="text-[13px] text-white/50 transition-colors hover:text-white"
+//       >
+//         About
+//       </a>
+
+//       <a
+//         href="/projects"
+//         className="text-[13px] text-white/50 transition-colors hover:text-white"
+//       >
+//         Skills
+//       </a>
+
+//       <a
+//         href="/projects"
+//         className="text-[13px] text-white/50 transition-colors hover:text-white"
+//       >
+//         Projects
+//       </a>
+
+//       <a
+//         href="/experience"
+//         className="text-[13px] text-white/50 transition-colors hover:text-white"
+//       >
+//         Experience
+//       </a>
+
+//       <a
+//         href="/contact"
+//         className="text-[13px] text-white/50 transition-colors hover:text-white"
+//       >
+//         Contact
+//       </a>
+//     </nav>
+//   );
+// };
+
 const Header = () => {
   return (
     <header className="relative z-50">
@@ -8,43 +49,6 @@ const Header = () => {
           ZM
           <span className="text-violet-500">.</span>
         </a>
-
-        <nav className="hidden items-center gap-10 md:flex">
-          <a
-            href="/about"
-            className="text-[13px] text-white/50 transition-colors hover:text-white"
-          >
-            About
-          </a>
-
-          <a
-            href="/projects"
-            className="text-[13px] text-white/50 transition-colors hover:text-white"
-          >
-            Skills
-          </a>
-
-          <a
-            href="/projects"
-            className="text-[13px] text-white/50 transition-colors hover:text-white"
-          >
-            Projects
-          </a>
-
-          <a
-            href="/experience"
-            className="text-[13px] text-white/50 transition-colors hover:text-white"
-          >
-            Experience
-          </a>
-
-          <a
-            href="/contact"
-            className="text-[13px] text-white/50 transition-colors hover:text-white"
-          >
-            Contact
-          </a>
-        </nav>
 
         <Button
           variant="outline"
