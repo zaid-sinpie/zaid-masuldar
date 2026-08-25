@@ -166,6 +166,28 @@ const HeroScene = () => {
   );
 };
 
+interface BuildingWithProps {
+  subjects: string[];
+}
+
+export function BuildingWith({ subjects }: BuildingWithProps) {
+  return (
+    <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2">
+      <span className="text-[10px] uppercase tracking-[0.2em] text-white/20">
+        Building with
+      </span>
+
+      {subjects.map((subject, index) => (
+        <div key={subject} className="flex items-center gap-x-5">
+          {index > 0 && <span className="h-1 w-1 rounded-full bg-white/15" />}
+
+          <span className="text-xs text-white/35">{subject}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 const Hero = () => {
   return (
     <section className="relative min-h-[calc(100vh-96px)]">
@@ -212,25 +234,9 @@ const Hero = () => {
               Get In Touch
             </Button>
           </div>
-          <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-white/20">
-              Building with
-            </span>
-
-            <span className="text-xs text-white/35">React</span>
-
-            <span className="h-1 w-1 rounded-full bg-white/15" />
-
-            <span className="text-xs text-white/35">Node.js</span>
-
-            <span className="h-1 w-1 rounded-full bg-white/15" />
-
-            <span className="text-xs text-white/35">Electron</span>
-
-            <span className="h-1 w-1 rounded-full bg-white/15" />
-
-            <span className="text-xs text-white/35">Chrome Extensions</span>
-          </div>
+          <BuildingWith
+            subjects={["React", "Node.js", "Electron", "Chrome Extensions"]}
+          />
         </div>
         <div className="absolute right-[-5%] top-[7%] h-162.5 w-[65%] lg:relative lg:right-auto lg:top-auto lg:h-162.5 lg:w-full">
           <div className="absolute left-1/2 top-1/2 h-75 w-75 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/10 blur-[100px]" />
