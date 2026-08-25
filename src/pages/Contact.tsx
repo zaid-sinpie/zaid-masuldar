@@ -58,7 +58,6 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-1 flex-col items-center justify-center py-20 text-center">
-          {/* Small status */}
 
           <div className="mb-8 flex items-center gap-2 rounded-full border border-emerald-400/10 bg-emerald-400/4 px-3 py-1.5">
             <span className="relative flex h-2 w-2">
