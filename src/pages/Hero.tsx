@@ -24,7 +24,6 @@ const NetworkSphere = () => {
     const points: THREE.Vector3[] = [];
     const radius = 2.25;
 
-    // Generate points on sphere
     for (let i = 0; i < 150; i++) {
       const phi = Math.acos(1 - (2 * (i + 0.5)) / 150);
       const theta = Math.PI * (1 + Math.sqrt(5)) * i;
@@ -36,7 +35,6 @@ const NetworkSphere = () => {
       points.push(new THREE.Vector3(x, y, z));
     }
 
-    // Connect nearby points
     const linePositions: number[] = [];
 
     for (let i = 0; i < points.length; i++) {
@@ -83,7 +81,6 @@ const NetworkSphere = () => {
 
   return (
     <group ref={groupRef}>
-      {/* Network lines */}
       <lineSegments>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[lines, 3]} />
@@ -92,7 +89,6 @@ const NetworkSphere = () => {
         <lineBasicMaterial color="#7c3aed" transparent opacity={0.32} />
       </lineSegments>
 
-      {/* Nodes */}
       <points>
         <bufferGeometry>
           <bufferAttribute
@@ -110,7 +106,6 @@ const NetworkSphere = () => {
         />
       </points>
 
-      {/* Inner glow sphere */}
       <mesh>
         <sphereGeometry args={[2.2, 64, 64]} />
 
@@ -122,14 +117,12 @@ const NetworkSphere = () => {
         />
       </mesh>
 
-      {/* Horizontal orbit */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[2.65, 0.006, 8, 150]} />
 
         <meshBasicMaterial color="#8b5cf6" transparent opacity={0.25} />
       </mesh>
 
-      {/* Diagonal orbit */}
       <mesh rotation={[0.7, 0.3, 0]}>
         <torusGeometry args={[2.55, 0.004, 8, 150]} />
 
@@ -138,10 +131,6 @@ const NetworkSphere = () => {
     </group>
   );
 };
-
-/* ================================================================
-   3D SCENE
-   ================================================================ */
 
 const HeroScene = () => {
   return (
@@ -181,13 +170,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-[calc(100vh-96px)]">
       <div className="mx-auto grid min-h-[calc(100vh-96px)] max-w-375 items-center px-7 lg:grid-cols-2 lg:px-12">
-        {/* ========================================================
-              LEFT CONTENT
-              ======================================================== */}
-
         <div className="relative z-20 pb-28 pt-16 lg:pb-24 lg:pt-0">
-          {/* Small label */}
-
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-8 bg-violet-500" />
 
@@ -195,9 +178,6 @@ const Hero = () => {
               Hello, I'm
             </span>
           </div>
-
-          {/* Name */}
-
           <h1 className="max-w-187.5 text-[58px] font-semibold leading-[0.95] tracking-[-0.055em] sm:text-[72px] lg:text-[82px] xl:text-[96px]">
             Zaid
             <br />
@@ -205,25 +185,16 @@ const Hero = () => {
               Masuldar
             </span>
           </h1>
-
-          {/* Role */}
-
           <div className="mt-7">
             <h2 className="text-xl font-medium text-violet-400 sm:text-2xl">
               Software Engineer
             </h2>
           </div>
-
-          {/* Description */}
-
           <p className="mt-6 max-w-127.5 text-sm leading-7 text-white/40 sm:text-base">
             I create performant web applications and tools with modern
             technologies, focusing on clean interfaces, secure systems and
             meaningful user experiences.
           </p>
-
-          {/* CTA */}
-
           <div className="mt-9 flex flex-wrap gap-3">
             <Button
               size="lg"
@@ -241,9 +212,6 @@ const Hero = () => {
               Get In Touch
             </Button>
           </div>
-
-          {/* Small tech line */}
-
           <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2">
             <span className="text-[10px] uppercase tracking-[0.2em] text-white/20">
               Building with
@@ -264,27 +232,13 @@ const Hero = () => {
             <span className="text-xs text-white/35">Chrome Extensions</span>
           </div>
         </div>
-
-        {/* ========================================================
-              RIGHT THREE.JS AREA
-              ======================================================== */}
-
         <div className="absolute right-[-5%] top-[7%] h-162.5 w-[65%] lg:relative lg:right-auto lg:top-auto lg:h-162.5 lg:w-full">
-          {/* Glow behind globe */}
-
           <div className="absolute left-1/2 top-1/2 h-75 w-75 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/10 blur-[100px]" />
 
           <HeroScene />
-
-          {/* Bottom glow */}
-
           <div className="pointer-events-none absolute bottom-[8%] left-1/2 h-20 87.5 -translate-x-1/2 rounded-full bg-violet-600/20 blur-[70px]" />
         </div>
       </div>
-
-      {/* ==========================================================
-            SOCIAL SIDEBAR
-            ========================================================== */}
 
       <div className="absolute right-7 top-1/2 z-30 hidden -translate-y-1/2 flex-col items-center gap-5 lg:flex">
         <a
@@ -315,11 +269,6 @@ const Hero = () => {
 
         <div className="mt-2 h-16 w-px bg-linear-to-b from-white/20 to-transparent" />
       </div>
-
-      {/* ==========================================================
-            SCROLL INDICATOR
-            ========================================================== */}
-
       <div className="absolute bottom-8 left-7 z-30 flex items-center gap-3 lg:left-12">
         <div className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10">
           <MoveDown className="h-3 w-3 animate-bounce text-white/40" />
@@ -329,11 +278,6 @@ const Hero = () => {
           Scroll to explore
         </span>
       </div>
-
-      {/* ==========================================================
-            BOTTOM RIGHT TEXT
-            ========================================================== */}
-
       <div className="absolute bottom-9 right-24 z-30 hidden md:block">
         <p className="text-[10px] tracking-[0.18em] text-white/20">
           BUILT WITH PASSION&nbsp;&nbsp;•&nbsp;&nbsp;DEPLOYED WITH PURPOSE
