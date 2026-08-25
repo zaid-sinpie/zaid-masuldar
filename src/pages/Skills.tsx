@@ -1,19 +1,7 @@
-import {
-  Braces,
-  Code2,
-  Database,
-  GitBranch,
-  Layers3,
-  Monitor,
-  Palette,
-  Server,
-  ShieldCheck,
-  Terminal,
-  Wrench,
-  type LucideIcon,
-} from "lucide-react";
-
 import { Card } from "../../components/ui/card";
+import { Code2, type LucideIcon } from "lucide-react";
+
+import { skillCategories, skills } from "../constants/skills";
 
 type Skill = {
   name: string;
@@ -22,112 +10,15 @@ type Skill = {
 };
 
 const Skills = () => {
-  const frontendSkills: Skill[] = [
-    {
-      name: "React",
-      description: "Component-driven interfaces",
-      icon: Code2,
-    },
-    {
-      name: "TypeScript",
-      description: "Typed application development",
-      icon: Braces,
-    },
-    {
-      name: "Next.js",
-      description: "Modern React applications",
-      icon: Layers3,
-    },
-    {
-      name: "Tailwind CSS",
-      description: "Utility-first UI development",
-      icon: Palette,
-    },
-  ];
-
-  const backendSkills: Skill[] = [
-    {
-      name: "Node.js",
-      description: "Server-side JavaScript",
-      icon: Server,
-    },
-    {
-      name: "Express.js",
-      description: "REST API development",
-      icon: Terminal,
-    },
-    {
-      name: "PostgreSQL",
-      description: "Relational data systems",
-      icon: Database,
-    },
-    {
-      name: "REST APIs",
-      description: "Application integrations",
-      icon: Braces,
-    },
-  ];
-
-  const platformSkills: Skill[] = [
-    {
-      name: "Chrome Extensions",
-      description: "Manifest V3 & Chrome APIs",
-      icon: Monitor,
-    },
-    {
-      name: "Electron",
-      description: "Cross-platform desktop apps",
-      icon: Monitor,
-    },
-    {
-      name: "OAuth 2.0",
-      description: "Authentication workflows",
-      icon: ShieldCheck,
-    },
-    {
-      name: "PKCE",
-      description: "Secure authorization flows",
-      icon: ShieldCheck,
-    },
-  ];
-
-  const tools: Skill[] = [
-    {
-      name: "Git",
-      description: "Version control",
-      icon: GitBranch,
-    },
-    {
-      name: "GitHub",
-      description: "Code collaboration",
-      icon: GitBranch,
-    },
-    {
-      name: "Vite",
-      description: "Modern build tooling",
-      icon: Wrench,
-    },
-    {
-      name: "Figma",
-      description: "Interface design",
-      icon: Palette,
-    },
-  ];
-
   return (
     <section
       id="skills"
       className="relative overflow-hidden border-t border-white/6 bg-[#07080c] py-32"
     >
       <div className="pointer-events-none absolute inset-0">
-        {/* Main glow */}
-
         <div className="absolute left-[15%] top-[15%] h-87.5 w-87.5 rounded-full bg-violet-700/6 blur-[140px]" />
 
         <div className="absolute bottom-[5%] right-[10%] h-75 w-75 rounded-full bg-purple-700/5 blur-[130px]" />
-
-        {/* Grid */}
-
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
@@ -178,33 +69,15 @@ const Skills = () => {
             <p className="font-mono text-[10px] text-white/15">04 categories</p>
           </div>
 
-          <SkillCategory
-            number="01"
-            title="Frontend"
-            subtitle="Interfaces & experiences"
-            skills={frontendSkills}
-          />
-
-          <SkillCategory
-            number="02"
-            title="Backend"
-            subtitle="Services & data"
-            skills={backendSkills}
-          />
-
-          <SkillCategory
-            number="03"
-            title="Browser & Desktop"
-            subtitle="Beyond the browser"
-            skills={platformSkills}
-          />
-
-          <SkillCategory
-            number="04"
-            title="Tools & Workflow"
-            subtitle="Building efficiently"
-            skills={tools}
-          />
+          {skillCategories.map((category) => (
+            <SkillCategory
+              key={category.number}
+              number={category.number}
+              title={category.title}
+              subtitle={category.subtitle}
+              skills={category.skills}
+            />
+          ))}
         </div>
 
         <div className="mt-24">
@@ -215,31 +88,7 @@ const Skills = () => {
           </div>
 
           <div className="flex flex-wrap gap-2.5">
-            {[
-              "JavaScript",
-              "TypeScript",
-              "React",
-              "Next.js",
-              "Redux",
-              "Node.js",
-              "Express.js",
-              "MongoDB",
-              "PostgreSQL",
-              // "Prisma",
-              "Electron",
-              "Chrome Extensions",
-              "Manifest V3",
-              "OAuth 2.0",
-              // "PKCE",
-              "REST APIs",
-              "Tailwind CSS",
-              "shadcn/ui",
-              "Vite",
-              "Git",
-              "GitHub",
-              // "Docker",
-              "Figma",
-            ].map((technology, index) => (
+            {skills.map((technology, index) => (
               <span
                 key={technology}
                 className={`
@@ -263,8 +112,6 @@ const Skills = () => {
         </div>
         <div className="mt-28">
           <div className="relative overflow-hidden rounded-3xl border border-white/[0.07] bg-[#0b0c11] px-7 py-10 sm:px-10">
-            {/* Glow */}
-
             <div className="pointer-events-none absolute -right-20 top-1/2 h-62.5 w-62.5 -translate-y-1/2 rounded-full bg-violet-600/8 blur-[100px]" />
 
             <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-center">
