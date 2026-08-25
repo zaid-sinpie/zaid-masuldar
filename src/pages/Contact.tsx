@@ -1,0 +1,321 @@
+import { ArrowUpRight, Mail, MapPin, type LucideIcon } from "lucide-react";
+import { SiGithub } from "react-icons/si";
+import type { IconType } from "react-icons";
+
+import { Button } from "../../components/ui/button";
+
+const LinkedinIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+    <rect x="0" y="0" width="24" height="24" rx="2" fill="currentColor" />
+    <path
+      fill="black"
+      d="M3.56 20.45h3.57V8.99H3.56v11.46ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM9.35 8.99v11.46h3.57v-5.67c0-1.49.28-2.94 2.13-2.94 1.82 0 1.85 1.71 1.85 3.04v5.57h3.56v-6.29c0-3.09-.66-5.46-4.26-5.46-1.73 0-2.89.95-3.37 1.85h-.05V8.99H9.35Z"
+    />
+  </svg>
+);
+
+const Contact = () => {
+  return (
+    <section
+      id="contact"
+      className="relative min-h-screen overflow-hidden border-t border-white/6 bg-[#06070b] pt-32"
+    >
+      {/* ============================================================
+          BACKGROUND
+      ============================================================ */}
+
+      <div className="pointer-events-none absolute inset-0">
+        {/* Main center glow */}
+
+        <div className="absolute left-1/2 top-[35%] h-125 w-125 -translate-x-1/2 rounded-full bg-violet-700/[0.07] blur-[160px]" />
+
+        {/* Secondary glow */}
+
+        <div className="absolute -bottom-37.5 left-[10%] h-87.5 w-87.5 rounded-full bg-purple-700/4 blur-[140px]" />
+
+        {/* Grid */}
+
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+            backgroundSize: "70px 70px",
+            maskImage: "linear-gradient(to bottom, black, transparent 80%)",
+          }}
+        />
+
+        {/* Radial center */}
+
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{
+            background:
+              "radial-gradient(circle at center, rgba(124,58,237,0.04), transparent 45%)",
+          }}
+        />
+      </div>
+
+      {/* ============================================================
+          CONTENT
+      ============================================================ */}
+
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-128px)] max-w-350 flex-col px-7 lg:px-12">
+        {/* ==========================================================
+            HEADER
+        ========================================================== */}
+
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-[11px] tracking-[0.25em] text-violet-400">
+            04
+          </span>
+
+          <span className="h-px w-8 bg-violet-500/60" />
+
+          <span className="text-[11px] uppercase tracking-[0.25em] text-white/30">
+            Contact
+          </span>
+        </div>
+
+        {/* ==========================================================
+            MAIN CTA
+        ========================================================== */}
+
+        <div className="flex flex-1 flex-col items-center justify-center py-20 text-center">
+          {/* Small status */}
+
+          <div className="mb-8 flex items-center gap-2 rounded-full border border-emerald-400/10 bg-emerald-400/4 px-3 py-1.5">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" />
+
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400/70" />
+            </span>
+
+            <span className="text-[9px] uppercase tracking-[0.2em] text-emerald-300/60">
+              Open to opportunities
+            </span>
+          </div>
+
+          {/* Heading */}
+
+          <h2 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:text-[88px]">
+            Let's build
+            <span className="block bg-linear-to-r from-white via-white to-white/30 bg-clip-text text-transparent md:h-25">
+              something together.
+            </span>
+          </h2>
+
+          {/* Description */}
+
+          <p className="mt-8 max-w-xl text-sm leading-7 text-white/35 sm:text-base">
+            Whether you have an interesting project, a job opportunity, or
+            simply want to talk about technology, feel free to reach out.
+          </p>
+
+          {/* ========================================================
+              EMAIL CTA
+          ======================================================== */}
+
+          <Button
+            size="lg"
+            className="group mt-9 h-12 rounded-xl bg-violet-600 px-6 text-sm shadow-[0_0_40px_rgba(124,58,237,0.12)] transition-all duration-300 hover:bg-violet-500 hover:shadow-[0_0_50px_rgba(124,58,237,0.2)]"
+          >
+            <a
+              href="mailto:zaidmasuldar@gmail.com"
+              className="flex justify-center items-center"
+            >
+              <Mail className="mr-2 h-4 w-4" />
+              Send me an email
+              <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </Button>
+
+          {/* ========================================================
+              CONTACT INFO
+          ======================================================== */}
+
+          <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:gap-7">
+            <ContactInfo
+              icon={Mail}
+              text="zaidmasuldar@gmail.com"
+              href="mailto:zaidmasuldar@gmail.com"
+            />
+
+            <span className="hidden h-1 w-1 rounded-full bg-white/10 sm:block" />
+
+            <ContactInfo icon={MapPin} text="Pune, India" />
+          </div>
+        </div>
+
+        {/* ==========================================================
+            CONTACT LINKS
+        ========================================================== */}
+
+        <div className="border-t border-white/6 py-8">
+          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
+            <div className="flex flex-wrap items-center gap-3">
+              <SocialLink
+                icon={LinkedinIcon}
+                label="LinkedIn"
+                href="https://linkedin.com/in/zaid-masuldar"
+              />
+
+              <SocialLink
+                icon={SiGithub}
+                label="GitHub"
+                href="https://github.com/zaid-sinpie"
+              />
+
+              <SocialLink
+                icon={Mail}
+                label="Email"
+                href="mailto:zaidmasuldar@gmail.com"
+              />
+            </div>
+
+            {/* Resume */}
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-xs text-white/30 transition-colors hover:text-white"
+            >
+              View Resume
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
+        </div>
+
+        {/* ==========================================================
+            FOOTER
+        ========================================================== */}
+
+        <footer className="border-t border-white/6 py-8">
+          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+            {/* Logo */}
+
+            <div>
+              <a
+                href="#"
+                className="text-xl font-semibold tracking-tight text-white"
+              >
+                ZM
+                <span className="text-violet-500">.</span>
+              </a>
+
+              <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-white/20">
+                Software Engineer
+              </p>
+            </div>
+
+            {/* Center */}
+
+            <div className="hidden text-center md:block">
+              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/15">
+                Thanks for scrolling
+              </p>
+            </div>
+
+            {/* Copyright */}
+
+            <div className="sm:text-right">
+              <p className="text-[10px] text-white/20">
+                © {new Date().getFullYear()} Zaid Masuldar
+              </p>
+
+              <p className="mt-1 text-[9px] uppercase tracking-[0.15em] text-white/10">
+                Built with React & Three.js
+              </p>
+            </div>
+          </div>
+        </footer>
+
+        {/* ==========================================================
+            END MARKER
+        ========================================================== */}
+
+        <div className="flex items-center gap-4 pb-8 pt-5">
+          <span className="h-px flex-1 bg-linear-to-r from-transparent via-white/6 to-transparent" />
+
+          <span className="font-mono text-[8px] tracking-[0.35em] text-white/10">
+            END
+          </span>
+
+          <span className="h-px flex-1 bg-linear-to-r from-transparent via-white/6 to-transparent" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ================================================================
+   CONTACT INFO
+   ================================================================ */
+
+const ContactInfo = ({
+  icon: Icon,
+  text,
+  href,
+}: {
+  icon: LucideIcon;
+  text: string;
+  href?: string;
+}) => {
+  const content = (
+    <>
+      <Icon className="h-3.5 w-3.5 text-white/20" />
+
+      <span className="text-xs text-white/30 transition-colors group-hover:text-white/60">
+        {text}
+      </span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className="group flex items-center gap-2 transition-colors"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return <div className="group flex items-center gap-2">{content}</div>;
+};
+
+/* ================================================================
+   SOCIAL LINK
+   ================================================================ */
+type SocialIcon = LucideIcon | IconType;
+
+const SocialLink = ({
+  icon: Icon,
+  label,
+  href,
+}: {
+  icon: SocialIcon;
+  label: string;
+  href: string;
+}) => {
+  return (
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      className="group flex items-center gap-2 rounded-lg border border-white/6 bg-white/1.5 px-3.5 py-2.5 transition-all duration-300 hover:border-violet-400/20 hover:bg-violet-400/4"
+    >
+      <Icon className="h-3.5 w-3.5 text-white/30 transition-colors group-hover:text-violet-400" />
+
+      <span className="text-[10px] text-white/30 transition-colors group-hover:text-white/60">
+        {label}
+      </span>
+
+      <ArrowUpRight className="h-3 w-3 text-white/10 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-400" />
+    </a>
+  );
+};
+
+export default Contact;
