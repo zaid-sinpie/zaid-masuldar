@@ -119,10 +119,6 @@ const Skills = () => {
       id="skills"
       className="relative overflow-hidden border-t border-white/6 bg-[#07080c] py-32"
     >
-      {/* ============================================================
-          BACKGROUND
-      ============================================================ */}
-
       <div className="pointer-events-none absolute inset-0">
         {/* Main glow */}
 
@@ -138,24 +134,13 @@ const Skills = () => {
             backgroundImage:
               "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
             backgroundSize: "70px 70px",
-            maskImage:
-              "linear-gradient(to bottom, black, transparent 80%)",
+            maskImage: "linear-gradient(to bottom, black, transparent 80%)",
           }}
         />
       </div>
 
-      {/* ============================================================
-          CONTENT
-      ============================================================ */}
-
       <div className="relative z-10 mx-auto max-w-350 px-7 lg:px-12">
-        {/* ==========================================================
-            SECTION HEADER
-        ========================================================== */}
-
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          {/* Label */}
-
           <div>
             <div className="flex items-center gap-3">
               <span className="font-mono text-[11px] tracking-[0.25em] text-violet-400">
@@ -171,27 +156,18 @@ const Skills = () => {
 
             <h2 className="mt-6 max-w-md text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
               Tools I use to
-              <span className="block text-white/35">
-                build things.
-              </span>
+              <span className="block text-white/35">build things.</span>
             </h2>
           </div>
 
-          {/* Intro */}
-
           <div className="flex items-end lg:pb-2">
             <p className="max-w-xl text-sm leading-7 text-white/40 sm:text-base">
-              I work across the stack, from designing interfaces and
-              building React applications to developing APIs,
-              browser extensions and desktop applications. These
-              are the technologies I use most often.
+              I work across the stack, from designing interfaces and building
+              React applications to developing APIs, browser extensions and
+              desktop applications. These are the technologies I use most often.
             </p>
           </div>
         </div>
-
-        {/* ==========================================================
-            CORE STACK
-        ========================================================== */}
 
         <div className="mt-20">
           <div className="mb-5 flex items-center justify-between">
@@ -199,14 +175,8 @@ const Skills = () => {
               Core stack
             </p>
 
-            <p className="font-mono text-[10px] text-white/15">
-              04 categories
-            </p>
+            <p className="font-mono text-[10px] text-white/15">04 categories</p>
           </div>
-
-          {/* ========================================================
-              FRONTEND
-          ======================================================== */}
 
           <SkillCategory
             number="01"
@@ -215,20 +185,12 @@ const Skills = () => {
             skills={frontendSkills}
           />
 
-          {/* ========================================================
-              BACKEND
-          ======================================================== */}
-
           <SkillCategory
             number="02"
             title="Backend"
             subtitle="Services & data"
             skills={backendSkills}
           />
-
-          {/* ========================================================
-              PLATFORM
-          ======================================================== */}
 
           <SkillCategory
             number="03"
@@ -237,10 +199,6 @@ const Skills = () => {
             skills={platformSkills}
           />
 
-          {/* ========================================================
-              TOOLS
-          ======================================================== */}
-
           <SkillCategory
             number="04"
             title="Tools & Workflow"
@@ -248,10 +206,6 @@ const Skills = () => {
             skills={tools}
           />
         </div>
-
-        {/* ==========================================================
-            TECHNOLOGY CLOUD
-        ========================================================== */}
 
         <div className="mt-24">
           <div className="mb-8">
@@ -302,18 +256,11 @@ const Skills = () => {
                   ${index % 5 === 0 ? "border-violet-400/12" : ""}
                 `}
               >
-                <span className="relative z-10">
-                  {technology}
-                </span>
+                <span className="relative z-10">{technology}</span>
               </span>
             ))}
           </div>
         </div>
-
-        {/* ==========================================================
-            BOTTOM STATEMENT
-        ========================================================== */}
-
         <div className="mt-28">
           <div className="relative overflow-hidden rounded-3xl border border-white/[0.07] bg-[#0b0c11] px-7 py-10 sm:px-10">
             {/* Glow */}
@@ -354,10 +301,6 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* ==========================================================
-            SECTION END
-        ========================================================== */}
-
         <div className="mt-16 flex items-center gap-4">
           <span className="h-px flex-1 bg-linear-to-r from-transparent via-white/8 to-transparent" />
 
@@ -371,10 +314,6 @@ const Skills = () => {
     </section>
   );
 };
-
-/* ================================================================
-   SKILL CATEGORY
-   ================================================================ */
 
 type SkillCategoryProps = {
   number: string;
@@ -391,11 +330,7 @@ const SkillCategory = ({
 }: SkillCategoryProps) => {
   return (
     <div className="group/category border-t border-white/6">
-      {/* Category heading */}
-
       <div className="grid gap-5 py-7 md:grid-cols-[180px_220px_1fr] md:items-center">
-        {/* Number */}
-
         <div className="flex items-center gap-3">
           <span className="font-mono text-[10px] text-violet-400/60">
             {number}
@@ -404,26 +339,15 @@ const SkillCategory = ({
           <span className="h-px w-5 bg-white/10" />
         </div>
 
-        {/* Name */}
-
         <div>
-          <h3 className="text-lg font-medium text-white">
-            {title}
-          </h3>
+          <h3 className="text-lg font-medium text-white">{title}</h3>
 
-          <p className="mt-1 text-[11px] text-white/25">
-            {subtitle}
-          </p>
+          <p className="mt-1 text-[11px] text-white/25">{subtitle}</p>
         </div>
-
-        {/* Skills */}
 
         <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
           {skills.map((skill) => (
-            <SkillCard
-              key={skill.name}
-              skill={skill}
-            />
+            <SkillCard key={skill.name} skill={skill} />
           ))}
         </div>
       </div>
@@ -431,17 +355,11 @@ const SkillCategory = ({
   );
 };
 
-/* ================================================================
-   SKILL CARD
-   ================================================================ */
-
 const SkillCard = ({ skill }: { skill: Skill }) => {
   const Icon = skill.icon;
 
   return (
     <Card className="group relative overflow-hidden rounded-xl border-white/6 bg-white/1.5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-400/20 hover:bg-violet-400/2.5">
-      {/* Hover glow */}
-
       <div className="pointer-events-none absolute -right-8 -top-8 h-20 w-20 rounded-full bg-violet-500/0 blur-2xl transition-all duration-500 group-hover:bg-violet-500/10" />
 
       <div className="relative flex items-start gap-3">

@@ -1,0 +1,60 @@
+import { Button } from "../../components/ui/button";
+
+const Header = () => {
+  return (
+    <header className="relative z-50">
+      <div className="mx-auto flex h-24 max-w-375 items-center justify-between px-7 lg:px-12">
+        <a href="/" className="group text-xl font-semibold tracking-tight">
+          ZM
+          <span className="text-violet-500">.</span>
+        </a>
+
+        <nav className="hidden items-center gap-10 md:flex">
+          <a
+            href="/about"
+            className="text-[13px] text-white/50 transition-colors hover:text-white"
+          >
+            About
+          </a>
+
+          <a
+            href="/projects"
+            className="text-[13px] text-white/50 transition-colors hover:text-white"
+          >
+            Skills
+          </a>
+
+          <a
+            href="/projects"
+            className="text-[13px] text-white/50 transition-colors hover:text-white"
+          >
+            Projects
+          </a>
+
+          <a
+            href="/experience"
+            className="text-[13px] text-white/50 transition-colors hover:text-white"
+          >
+            Experience
+          </a>
+
+          <a
+            href="/contact"
+            className="text-[13px] text-white/50 transition-colors hover:text-white"
+          >
+            Contact
+          </a>
+        </nav>
+
+        <Button
+          variant="outline"
+          className="h-9 rounded-lg border-violet-500/50 bg-transparent px-4 text-xs text-white hover:border-violet-400 hover:bg-violet-500/8 hover:text-white"
+        >
+          Resume
+        </Button>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

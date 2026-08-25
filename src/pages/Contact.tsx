@@ -20,20 +20,10 @@ const Contact = () => {
       id="contact"
       className="relative min-h-screen overflow-hidden border-t border-white/6 bg-[#06070b] pt-32"
     >
-      {/* ============================================================
-          BACKGROUND
-      ============================================================ */}
-
       <div className="pointer-events-none absolute inset-0">
-        {/* Main center glow */}
-
         <div className="absolute left-1/2 top-[35%] h-125 w-125 -translate-x-1/2 rounded-full bg-violet-700/[0.07] blur-[160px]" />
 
-        {/* Secondary glow */}
-
         <div className="absolute -bottom-37.5 left-[10%] h-87.5 w-87.5 rounded-full bg-purple-700/4 blur-[140px]" />
-
-        {/* Grid */}
 
         <div
           className="absolute inset-0 opacity-[0.025]"
@@ -45,8 +35,6 @@ const Contact = () => {
           }}
         />
 
-        {/* Radial center */}
-
         <div
           className="absolute inset-0 opacity-40"
           style={{
@@ -56,15 +44,7 @@ const Contact = () => {
         />
       </div>
 
-      {/* ============================================================
-          CONTENT
-      ============================================================ */}
-
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-128px)] max-w-350 flex-col px-7 lg:px-12">
-        {/* ==========================================================
-            HEADER
-        ========================================================== */}
-
         <div className="flex items-center gap-3">
           <span className="font-mono text-[11px] tracking-[0.25em] text-violet-400">
             04
@@ -76,10 +56,6 @@ const Contact = () => {
             Contact
           </span>
         </div>
-
-        {/* ==========================================================
-            MAIN CTA
-        ========================================================== */}
 
         <div className="flex flex-1 flex-col items-center justify-center py-20 text-center">
           {/* Small status */}
@@ -96,8 +72,6 @@ const Contact = () => {
             </span>
           </div>
 
-          {/* Heading */}
-
           <h2 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:text-[88px]">
             Let's build
             <span className="block bg-linear-to-r from-white via-white to-white/30 bg-clip-text text-transparent md:h-25">
@@ -105,16 +79,10 @@ const Contact = () => {
             </span>
           </h2>
 
-          {/* Description */}
-
           <p className="mt-8 max-w-xl text-sm leading-7 text-white/35 sm:text-base">
             Whether you have an interesting project, a job opportunity, or
             simply want to talk about technology, feel free to reach out.
           </p>
-
-          {/* ========================================================
-              EMAIL CTA
-          ======================================================== */}
 
           <Button
             size="lg"
@@ -130,10 +98,6 @@ const Contact = () => {
             </a>
           </Button>
 
-          {/* ========================================================
-              CONTACT INFO
-          ======================================================== */}
-
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:gap-7">
             <ContactInfo
               icon={Mail}
@@ -146,10 +110,6 @@ const Contact = () => {
             <ContactInfo icon={MapPin} text="Pune, India" />
           </div>
         </div>
-
-        {/* ==========================================================
-            CONTACT LINKS
-        ========================================================== */}
 
         <div className="border-t border-white/6 py-8">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
@@ -172,9 +132,6 @@ const Contact = () => {
                 href="mailto:zaidmasuldar@gmail.com"
               />
             </div>
-
-            {/* Resume */}
-
             <a
               href="/resume.pdf"
               target="_blank"
@@ -186,10 +143,6 @@ const Contact = () => {
             </a>
           </div>
         </div>
-
-        {/* ==========================================================
-            FOOTER
-        ========================================================== */}
 
         <footer className="border-t border-white/6 py-8">
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
@@ -209,15 +162,11 @@ const Contact = () => {
               </p>
             </div>
 
-            {/* Center */}
-
             <div className="hidden text-center md:block">
               <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/15">
                 Thanks for scrolling
               </p>
             </div>
-
-            {/* Copyright */}
 
             <div className="sm:text-right">
               <p className="text-[10px] text-white/20">
@@ -230,10 +179,6 @@ const Contact = () => {
             </div>
           </div>
         </footer>
-
-        {/* ==========================================================
-            END MARKER
-        ========================================================== */}
 
         <div className="flex items-center gap-4 pb-8 pt-5">
           <span className="h-px flex-1 bg-linear-to-r from-transparent via-white/6 to-transparent" />
@@ -248,10 +193,6 @@ const Contact = () => {
     </section>
   );
 };
-
-/* ================================================================
-   CONTACT INFO
-   ================================================================ */
 
 const ContactInfo = ({
   icon: Icon,
@@ -286,9 +227,6 @@ const ContactInfo = ({
   return <div className="group flex items-center gap-2">{content}</div>;
 };
 
-/* ================================================================
-   SOCIAL LINK
-   ================================================================ */
 type SocialIcon = LucideIcon | IconType;
 
 const SocialLink = ({

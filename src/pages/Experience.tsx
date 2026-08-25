@@ -63,18 +63,10 @@ const Experience = () => {
       id="experience"
       className="relative overflow-hidden border-t border-white/6 bg-[#06070b] py-32"
     >
-      {/* ============================================================
-          BACKGROUND
-      ============================================================ */}
-
       <div className="pointer-events-none absolute inset-0">
-        {/* Purple glow */}
-
         <div className="absolute -left-37.5 top-[20%] h-112.5 w-112.5 rounded-full bg-violet-700/5.5 blur-[150px]" />
 
         <div className="absolute bottom-[5%] -right-25 h-100 w-100 rounded-full bg-purple-700/5 blur-[140px]" />
-
-        {/* Grid */}
 
         <div
           className="absolute inset-0 opacity-[0.025]"
@@ -82,21 +74,12 @@ const Experience = () => {
             backgroundImage:
               "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
             backgroundSize: "70px 70px",
-            maskImage:
-              "linear-gradient(to bottom, black, transparent 85%)",
+            maskImage: "linear-gradient(to bottom, black, transparent 85%)",
           }}
         />
       </div>
 
-      {/* ============================================================
-          CONTENT
-      ============================================================ */}
-
       <div className="relative z-10 mx-auto max-w-350 px-7 lg:px-12">
-        {/* ==========================================================
-            HEADER
-        ========================================================== */}
-
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           {/* Left */}
 
@@ -115,50 +98,27 @@ const Experience = () => {
 
             <h2 className="mt-6 max-w-xl text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
               Building software
-              <span className="block text-white/35">
-                professionally.
-              </span>
+              <span className="block text-white/35">professionally.</span>
             </h2>
           </div>
-
-          {/* Right */}
-
           <div className="flex items-end lg:pb-2">
             <p className="max-w-xl text-sm leading-7 text-white/40 sm:text-base">
-              My experience has taken me across frontend development,
-              backend integration, browser extensions and desktop
-              applications. I enjoy working close to both the product
-              and the underlying technology.
+              My experience has taken me across frontend development, backend
+              integration, browser extensions and desktop applications. I enjoy
+              working close to both the product and the underlying technology.
             </p>
           </div>
         </div>
 
-        {/* ==========================================================
-            EXPERIENCE TIMELINE
-        ========================================================== */}
-
         <div className="relative mt-20">
-          {/* Vertical timeline */}
-
           <div className="absolute bottom-10 left-2.75 top-4 hidden w-px bg-linear-to-b from-violet-500/50 via-white/8 to-transparent md:block" />
 
           {experience.map((item) => (
-            <ExperienceCard
-              key={item.company}
-              item={item}
-            />
+            <ExperienceCard key={item.company} item={item} />
           ))}
-
-          {/* ========================================================
-              EDUCATION TIMELINE
-          ======================================================== */}
 
           <EducationItem />
         </div>
-
-        {/* ==========================================================
-            ENGINEERING AREAS
-        ========================================================== */}
 
         <div className="mt-28">
           <div className="mb-8">
@@ -198,10 +158,6 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* ==========================================================
-            EXPERIENCE SUMMARY
-        ========================================================== */}
-
         <div className="mt-20 grid gap-4 lg:grid-cols-[1.4fr_0.6fr]">
           {/* Main */}
 
@@ -226,14 +182,11 @@ const Experience = () => {
               </div>
 
               <p className="mt-7 max-w-2xl text-sm leading-7 text-white/40">
-                Although my current work has a strong focus on
-                frontend and browser-based development, I like
-                understanding the entire system behind a feature —
-                from the interface and API layer to authentication,
-                data flow and deployment.
+                Although my current work has a strong focus on frontend and
+                browser-based development, I like understanding the entire
+                system behind a feature — from the interface and API layer to
+                authentication, data flow and deployment.
               </p>
-
-              {/* Skill flow */}
 
               <div className="mt-8 flex flex-wrap items-center gap-2">
                 <ExperienceTag icon={Code2} label="UI" />
@@ -248,22 +201,14 @@ const Experience = () => {
 
                 <Arrow />
 
-                <ExperienceTag
-                  icon={LockKeyhole}
-                  label="Security"
-                />
+                <ExperienceTag icon={LockKeyhole} label="Security" />
 
                 <Arrow />
 
-                <ExperienceTag
-                  icon={Monitor}
-                  label="Desktop"
-                />
+                <ExperienceTag icon={Monitor} label="Desktop" />
               </div>
             </div>
           </Card>
-
-          {/* Stats */}
 
           <Card className="rounded-3xl border-white/[0.07] bg-[#0b0c11] p-7">
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/20">
@@ -271,31 +216,18 @@ const Experience = () => {
             </p>
 
             <div className="mt-7 space-y-6">
-              <Stat
-                value="1.8+"
-                label="Years building software"
-              />
+              <Stat value="1.8+" label="Years building software" />
 
               <div className="h-px bg-white/6" />
 
-              <Stat
-                value="4+"
-                label="Engineering domains"
-              />
+              <Stat value="4+" label="Engineering domains" />
 
               <div className="h-px bg-white/6" />
 
-              <Stat
-                value="∞"
-                label="Things left to learn"
-              />
+              <Stat value="∞" label="Things left to learn" />
             </div>
           </Card>
         </div>
-
-        {/* ==========================================================
-            FOOTER LINE
-        ========================================================== */}
 
         <div className="mt-20 flex items-center gap-4">
           <span className="h-px flex-1 bg-linear-to-r from-transparent via-white/8 to-transparent" />
@@ -311,24 +243,10 @@ const Experience = () => {
   );
 };
 
-/* ================================================================
-   EXPERIENCE CARD
-   ================================================================ */
-
-const ExperienceCard = ({
-  item,
-}: {
-  item: ExperienceItem;
-}) => {
+const ExperienceCard = ({ item }: { item: ExperienceItem }) => {
   return (
     <div className="relative grid gap-8 md:grid-cols-[180px_1fr]">
-      {/* ==========================================================
-          TIMELINE DATE
-      ========================================================== */}
-
       <div className="relative">
-        {/* Timeline dot */}
-
         <div className="absolute -left-px top-3 hidden h-6 w-6 items-center justify-center rounded-full border border-violet-400/30 bg-[#06070b] md:flex">
           <div className="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_15px_rgba(139,92,246,0.8)]" />
         </div>
@@ -341,16 +259,10 @@ const ExperienceCard = ({
           <div className="mt-2 flex items-center gap-2">
             <CalendarDays className="h-3 w-3 text-white/20" />
 
-            <span className="text-[10px] text-white/20">
-              {item.location}
-            </span>
+            <span className="text-[10px] text-white/20">{item.location}</span>
           </div>
         </div>
       </div>
-
-      {/* ==========================================================
-          MAIN CARD
-      ========================================================== */}
 
       <Card className="group relative overflow-hidden rounded-3xl border-white/[0.07] bg-[#0b0c11] p-7 transition-all duration-500 hover:border-violet-400/20 sm:p-9">
         {/* Background glow */}
@@ -371,27 +283,17 @@ const ExperienceCard = ({
               {item.title}
             </h3>
 
-            <p className="mt-2 text-sm text-white/40">
-              {item.company}
-            </p>
+            <p className="mt-2 text-sm text-white/40">{item.company}</p>
           </div>
-
-          {/* Icon */}
 
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/[0.07] bg-white/2.5">
             <BriefcaseBusiness className="h-5 w-5 text-white/35 transition-colors duration-300 group-hover:text-violet-400" />
           </div>
         </div>
 
-        {/* Description */}
-
         <p className="relative mt-8 max-w-3xl text-sm leading-7 text-white/40">
           {item.description}
         </p>
-
-        {/* ========================================================
-            RESPONSIBILITIES
-        ======================================================== */}
 
         <div className="relative mt-10">
           <div className="mb-4 flex items-center gap-3">
@@ -418,10 +320,6 @@ const ExperienceCard = ({
           </div>
         </div>
 
-        {/* ========================================================
-            TECHNOLOGIES
-        ======================================================== */}
-
         <div className="relative mt-9 border-t border-white/6 pt-6">
           <div className="flex flex-wrap gap-2">
             {item.technologies.map((technology) => (
@@ -445,10 +343,6 @@ const ExperienceCard = ({
   );
 };
 
-/* ================================================================
-   EDUCATION
-   ================================================================ */
-
 const EducationItem = () => {
   return (
     <div className="relative mt-16 grid gap-8 md:grid-cols-[180px_1fr]">
@@ -460,17 +354,11 @@ const EducationItem = () => {
         </div>
 
         <div className="md:pl-10">
-          <p className="font-mono text-[11px] text-white/25">
-            Education
-          </p>
+          <p className="font-mono text-[11px] text-white/25">Education</p>
 
-          <p className="mt-2 text-[10px] text-white/15">
-            Undergraduate
-          </p>
+          <p className="mt-2 text-[10px] text-white/15">Undergraduate</p>
         </div>
       </div>
-
-      {/* Card */}
 
       <Card className="rounded-3xl border-white/6 bg-[#0a0b10] p-7 sm:p-8">
         <div className="flex flex-col justify-between gap-6 sm:flex-row">
@@ -495,32 +383,23 @@ const EducationItem = () => {
           </div>
 
           <div className="sm:text-right">
-            <p className="font-mono text-sm text-white/40">
-              CGPA
-            </p>
+            <p className="font-mono text-sm text-white/40">CGPA</p>
 
-            <p className="mt-1 text-xl font-semibold text-violet-400">
-              8.19
-            </p>
+            <p className="mt-1 text-xl font-semibold text-violet-400">8.19</p>
           </div>
         </div>
 
         <div className="mt-7 border-t border-white/5 pt-6">
           <p className="max-w-3xl text-xs leading-6 text-white/25">
-            Electronics engineering gave me a foundation in
-            problem-solving, systems thinking and understanding how
-            technology works beneath the surface — skills that
-            continue to influence how I approach software.
+            Electronics engineering gave me a foundation in problem-solving,
+            systems thinking and understanding how technology works beneath the
+            surface — skills that continue to influence how I approach software.
           </p>
         </div>
       </Card>
     </div>
   );
 };
-
-/* ================================================================
-   EXPERIENCE AREA
-   ================================================================ */
 
 const ExperienceArea = ({
   icon: Icon,
@@ -537,20 +416,12 @@ const ExperienceArea = ({
         <Icon className="h-4 w-4 text-white/35 transition-colors group-hover:text-violet-400" />
       </div>
 
-      <h4 className="mt-6 text-sm font-medium text-white/70">
-        {title}
-      </h4>
+      <h4 className="mt-6 text-sm font-medium text-white/70">{title}</h4>
 
-      <p className="mt-3 text-xs leading-6 text-white/30">
-        {description}
-      </p>
+      <p className="mt-3 text-xs leading-6 text-white/30">{description}</p>
     </Card>
   );
 };
-
-/* ================================================================
-   EXPERIENCE FLOW TAG
-   ================================================================ */
 
 const ExperienceTag = ({
   icon: Icon,
@@ -563,36 +434,16 @@ const ExperienceTag = ({
     <div className="flex items-center gap-2 rounded-lg border border-white/6 bg-white/2 px-3 py-2">
       <Icon className="h-3.5 w-3.5 text-violet-400/70" />
 
-      <span className="text-[10px] text-white/35">
-        {label}
-      </span>
+      <span className="text-[10px] text-white/35">{label}</span>
     </div>
   );
 };
 
-/* ================================================================
-   ARROW
-   ================================================================ */
-
 const Arrow = () => {
-  return (
-    <span className="hidden text-white/15 sm:block">
-      →
-    </span>
-  );
+  return <span className="hidden text-white/15 sm:block">→</span>;
 };
 
-/* ================================================================
-   STAT
-   ================================================================ */
-
-const Stat = ({
-  value,
-  label,
-}: {
-  value: string;
-  label: string;
-}) => {
+const Stat = ({ value, label }: { value: string; label: string }) => {
   return (
     <div>
       <p className="text-3xl font-semibold tracking-tight text-white">

@@ -9,6 +9,7 @@ import {
   Sparkles,
   type LucideIcon,
 } from "lucide-react";
+// import { SiGithub } from "react-icons/si";
 
 import { Card } from "../../components/ui/card";
 
@@ -120,17 +121,11 @@ const Projects = () => {
       id="projects"
       className="relative overflow-hidden border-t border-white/6 bg-[#07080c] py-32"
     >
-      {/* ============================================================
-          BACKGROUND
-      ============================================================ */}
-
       <div className="pointer-events-none absolute inset-0">
-        {/* Main glows */}
         <div className="absolute right-[10%] top-[10%] h-105 w-105 rounded-full bg-violet-700/5.5 blur-[150px]" />
 
         <div className="absolute bottom-[20%] left-[5%] h-80 w-[320px] rounded-full bg-purple-700/4 blur-[140px]" />
 
-        {/* Grid */}
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
@@ -143,18 +138,8 @@ const Projects = () => {
         />
       </div>
 
-      {/* ============================================================
-          CONTENT
-      ============================================================ */}
-
       <div className="relative z-10 mx-auto max-w-350 px-7 lg:px-12">
-        {/* ==========================================================
-            SECTION HEADER
-        ========================================================== */}
-
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          {/* Label */}
-
           <div>
             <div className="flex items-center gap-3">
               <span className="font-mono text-[11px] tracking-[0.25em] text-violet-400">
@@ -174,8 +159,6 @@ const Projects = () => {
             </h2>
           </div>
 
-          {/* Intro */}
-
           <div className="flex items-end lg:pb-2">
             <p className="max-w-xl text-sm leading-7 text-white/40 sm:text-base">
               A collection of applications, browser extensions and developer
@@ -184,10 +167,6 @@ const Projects = () => {
             </p>
           </div>
         </div>
-
-        {/* ==========================================================
-            PROJECT COUNT
-        ========================================================== */}
 
         <div className="mt-20 mb-5 flex items-center justify-between">
           <p className="text-[10px] uppercase tracking-[0.25em] text-white/25">
@@ -199,10 +178,6 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* ==========================================================
-            FEATURED PROJECTS
-        ========================================================== */}
-
         <div className="grid gap-4 lg:grid-cols-2">
           {projects
             .filter((project) => project.featured)
@@ -210,10 +185,6 @@ const Projects = () => {
               <FeaturedProjectCard key={project.number} project={project} />
             ))}
         </div>
-
-        {/* ==========================================================
-            OTHER PROJECTS
-        ========================================================== */}
 
         <div className="mt-16">
           <div className="mb-5 flex items-center gap-4">
@@ -234,10 +205,6 @@ const Projects = () => {
               ))}
           </div>
         </div>
-
-        {/* ==========================================================
-            TECHNOLOGY SUMMARY
-        ========================================================== */}
 
         <div className="mt-24">
           <div className="mb-8">
@@ -289,10 +256,6 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* ==========================================================
-            BOTTOM STATEMENT
-        ========================================================== */}
-
         <div className="mt-28">
           <div className="relative overflow-hidden rounded-3xl border border-white/[0.07] bg-[#0b0c11] px-7 py-10 sm:px-10">
             {/* Glow */}
@@ -333,10 +296,6 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* ==========================================================
-            SECTION END
-        ========================================================== */}
-
         <div className="mt-16 flex items-center gap-4">
           <span className="h-px flex-1 bg-linear-to-r from-transparent via-white/8 to-transparent" />
 
@@ -351,26 +310,16 @@ const Projects = () => {
   );
 };
 
-/* ================================================================
-   FEATURED PROJECT CARD
-================================================================ */
-
 const FeaturedProjectCard = ({ project }: { project: Project }) => {
   const Icon = project.icon;
 
   return (
     <Card className="group relative overflow-hidden rounded-2xl border-white/[0.07] bg-[#0b0c11] p-0 transition-all duration-500 hover:-translate-y-1 hover:border-violet-400/20">
-      {/* Background glow */}
-
       <div className="pointer-events-none absolute -right-24 -top-24 h-70 w-70 rounded-full bg-violet-600/5 blur-[100px] transition-all duration-500 group-hover:bg-violet-600/10" />
-
-      {/* Top line */}
 
       <div className="absolute left-0 right-0 top-0 h-px bg-linear-to-r from-transparent via-violet-400/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       <div className="relative p-7 sm:p-8">
-        {/* Header */}
-
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[10px] text-violet-400/70">
@@ -387,13 +336,9 @@ const FeaturedProjectCard = ({ project }: { project: Project }) => {
           <ArrowUpRight className="h-4 w-4 text-white/20 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-400" />
         </div>
 
-        {/* Icon */}
-
         <div className="mt-10 flex h-12 w-12 items-center justify-center rounded-xl border border-white/[0.07] bg-white/2.5 transition-all duration-300 group-hover:border-violet-400/20 group-hover:bg-violet-400/[0.07]">
           <Icon className="h-5 w-5 text-white/45 transition-colors duration-300 group-hover:text-violet-400" />
         </div>
-
-        {/* Content */}
 
         <div className="mt-6">
           <p className="text-[10px] uppercase tracking-[0.18em] text-violet-400/60">
@@ -409,8 +354,6 @@ const FeaturedProjectCard = ({ project }: { project: Project }) => {
           </p>
         </div>
 
-        {/* Technologies */}
-
         <div className="mt-7 flex flex-wrap gap-2">
           {project.technologies.map((technology) => (
             <span
@@ -421,8 +364,6 @@ const FeaturedProjectCard = ({ project }: { project: Project }) => {
             </span>
           ))}
         </div>
-
-        {/* Footer */}
 
         <div className="mt-8 flex items-center justify-between border-t border-white/6 pt-5">
           <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-white/15">
@@ -437,7 +378,7 @@ const FeaturedProjectCard = ({ project }: { project: Project }) => {
                 rel="noreferrer"
                 className="flex h-8 w-8 items-center justify-center rounded-full border border-white/6 text-white/25 transition-colors hover:border-violet-400/20 hover:text-violet-400"
               >
-                {/* <Github className="h-3.5 w-3.5" /> */}
+                {/* <SiGithub className="h-3.5 w-3.5" /> */}
               </a>
             )}
 
@@ -458,24 +399,16 @@ const FeaturedProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
-/* ================================================================
-   PROJECT ROW
-================================================================ */
-
 const ProjectRow = ({ project }: { project: Project }) => {
   const Icon = project.icon;
 
   return (
     <div className="group relative grid gap-5 py-7 transition-colors duration-300 hover:bg-white/1 md:grid-cols-[80px_1fr_auto] md:items-center">
-      {/* Number */}
-
       <div className="flex items-center gap-3">
         <span className="font-mono text-[10px] text-violet-400/50">
           {project.number}
         </span>
       </div>
-
-      {/* Main */}
 
       <div className="flex items-start gap-5">
         <div className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/6 bg-white/2 transition-all duration-300 group-hover:border-violet-400/20 group-hover:bg-violet-400/5 sm:flex">
@@ -506,8 +439,6 @@ const ProjectRow = ({ project }: { project: Project }) => {
           </div>
         </div>
       </div>
-
-      {/* Arrow */}
 
       <div className="hidden md:block">
         <ArrowUpRight className="h-4 w-4 text-white/15 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-400" />
