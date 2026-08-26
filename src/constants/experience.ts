@@ -27,9 +27,9 @@ export const experience: ExperienceItem[] = [
       "Electron",
       "Chrome Extensions",
       "OAuth 2.0",
-      "PKCE",
+      // "PKCE",
       "REST APIs",
-      "Git",
+      // "Git",
     ],
     responsibilities: [
       "Develop and maintain React-based web applications",
