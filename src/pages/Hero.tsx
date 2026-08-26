@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { ArrowRight, MoveDown } from "lucide-react";
+import { MoveDown } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
@@ -220,13 +220,13 @@ const Hero = () => {
             meaningful user experiences.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Button
+            {/* <Button
               size="lg"
               className="group h-11 rounded-lg bg-violet-600 px-5 text-sm hover:bg-violet-500"
             >
               Explore My Work
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
+            </Button> */}
 
             <Button
               onClick={() => setContactOpen(true)}
