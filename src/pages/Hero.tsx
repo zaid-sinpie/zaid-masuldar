@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { ArrowRight, Mail, MoveDown } from "lucide-react";
+import { ArrowRight, MoveDown } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
@@ -266,14 +266,6 @@ const Hero = () => {
           className="text-white/35 transition-all duration-300 hover:-translate-y-0.5 hover:text-violet-400"
         >
           <SiGithub className="h-4.25 w-4.25" />
-        </a>
-
-        <a
-          href="#"
-          aria-label="Email"
-          className="text-white/35 transition-all duration-300 hover:-translate-y-0.5 hover:text-violet-400"
-        >
-          <Mail className="h-4.25 w-4.25" />
         </a>
 
         <div className="mt-2 h-16 w-px bg-linear-to-b from-white/20 to-transparent" />
