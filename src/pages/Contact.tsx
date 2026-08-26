@@ -1,18 +1,8 @@
 import { ArrowUpRight, Mail, MapPin, type LucideIcon } from "lucide-react";
-import { SiGithub } from "react-icons/si";
 import type { IconType } from "react-icons";
 
 import { Button } from "../../components/ui/button";
-
-const LinkedinIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-    <rect x="0" y="0" width="24" height="24" rx="2" fill="currentColor" />
-    <path
-      fill="black"
-      d="M3.56 20.45h3.57V8.99H3.56v11.46ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM9.35 8.99v11.46h3.57v-5.67c0-1.49.28-2.94 2.13-2.94 1.82 0 1.85 1.71 1.85 3.04v5.57h3.56v-6.29c0-3.09-.66-5.46-4.26-5.46-1.73 0-2.89.95-3.37 1.85h-.05V8.99H9.35Z"
-    />
-  </svg>
-);
+import { socialLinks } from "../constants/contact";
 
 const Contact = () => {
   return (
@@ -58,7 +48,6 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-1 flex-col items-center justify-center py-20 text-center">
-
           <div className="mb-8 flex items-center gap-2 rounded-full border border-emerald-400/10 bg-emerald-400/4 px-3 py-1.5">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" />
@@ -113,23 +102,14 @@ const Contact = () => {
         <div className="border-t border-white/6 py-8">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
             <div className="flex flex-wrap items-center gap-3">
-              <SocialLink
-                icon={LinkedinIcon}
-                label="LinkedIn"
-                href="https://linkedin.com/in/zaid-masuldar"
-              />
-
-              <SocialLink
-                icon={SiGithub}
-                label="GitHub"
-                href="https://github.com/zaid-sinpie"
-              />
-
-              <SocialLink
-                icon={Mail}
-                label="Email"
-                href="mailto:zaidmasuldar@gmail.com"
-              />
+              {socialLinks.map((link) => (
+                <SocialLink
+                  key={link.label}
+                  icon={link.icon}
+                  label={link.label}
+                  href={link.href}
+                />
+              ))}
             </div>
             <a
               href="/resume.pdf"
@@ -145,8 +125,6 @@ const Contact = () => {
 
         <footer className="border-t border-white/6 py-8">
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            {/* Logo */}
-
             <div>
               <a
                 href="#"
