@@ -12,10 +12,10 @@ const Stars = () => {
   const stars = useMemo(() => {
     return Array.from({ length: 80 }, (_, index) => ({
       id: index,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      size: Math.random() > 0.8 ? 2 : 1,
-      opacity: Math.random() * 0.5 + 0.1,
+      left: `${(index * 37.7) % 100}%`,
+      top: `${(index * 61.3) % 100}%`,
+      size: index % 5 === 0 ? 2 : 1,
+      opacity: ((index * 17) % 50) / 100 + 0.1,
     }));
   }, []);
 
