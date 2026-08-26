@@ -1,17 +1,4 @@
-import {
-  BriefcaseBusiness,
-  CalendarDays,
-  Code2,
-  Database,
-  GraduationCap,
-  Layers3,
-  LockKeyhole,
-  Monitor,
-  Server,
-  ShieldCheck,
-  type LucideIcon,
-  Blocks,
-} from "lucide-react";
+import { Code2, Monitor, ShieldCheck, Blocks } from "lucide-react";
 
 type ExperienceItem = {
   period: string;
@@ -65,8 +52,7 @@ export const experienceAreas = [
   {
     icon: Blocks,
     title: "Browser Extensions",
-    description:
-      "Developing browser-native functionality using Manifest V3.",
+    description: "Developing browser-native functionality using Manifest V3.",
   },
   {
     icon: Monitor,
