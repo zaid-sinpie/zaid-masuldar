@@ -8,12 +8,11 @@ import {
   LockKeyhole,
   Monitor,
   Server,
-  ShieldCheck,
   type LucideIcon,
-  Blocks,
 } from "lucide-react";
 
 import { Card } from "../../components/ui/card";
+import { experience, experienceAreas } from "../constants/experience";
 
 type ExperienceItem = {
   period: string;
@@ -25,37 +24,6 @@ type ExperienceItem = {
   technologies: string[];
   responsibilities: string[];
 };
-
-const experience: ExperienceItem[] = [
-  {
-    period: "Jan 2025 — Present",
-    type: "Professional Experience",
-    title: "Software Development Engineer - 1",
-    company: "miniOrange",
-    location: "Pune, India",
-    description:
-      "Building and maintaining software products across web, browser and desktop environments. My work spans frontend engineering, backend integration, authentication workflows, browser extension development and desktop applications.",
-    technologies: [
-      "React",
-      "JavaScript",
-      "Node.js",
-      "Electron",
-      "Chrome Extensions",
-      "OAuth 2.0",
-      "PKCE",
-      "REST APIs",
-      "Git",
-    ],
-    responsibilities: [
-      "Develop and maintain React-based web applications",
-      "Build Chrome extensions using Manifest V3 and Chrome APIs",
-      "Implement authentication and authorization workflows",
-      "Develop Electron desktop applications",
-      "Integrate frontend applications with REST APIs",
-      "Work on security-focused application functionality",
-    ],
-  },
-];
 
 const Experience = () => {
   return (
@@ -81,8 +49,6 @@ const Experience = () => {
 
       <div className="relative z-10 mx-auto max-w-350 px-7 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          {/* Left */}
-
           <div>
             <div className="flex items-center gap-3">
               <span className="font-mono text-[11px] tracking-[0.25em] text-violet-400">
@@ -132,35 +98,18 @@ const Experience = () => {
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <ExperienceArea
-              icon={Code2}
-              title="Frontend"
-              description="Building component-driven interfaces and application workflows."
-            />
-
-            <ExperienceArea
-              icon={Blocks}
-              title="Browser Extensions"
-              description="Developing browser-native functionality using Manifest V3."
-            />
-
-            <ExperienceArea
-              icon={Monitor}
-              title="Desktop Apps"
-              description="Building cross-platform applications with Electron."
-            />
-
-            <ExperienceArea
-              icon={ShieldCheck}
-              title="Security"
-              description="Working with authentication, authorization and secure workflows."
-            />
+            {experienceAreas.map((area) => (
+              <ExperienceArea
+                key={area.title}
+                icon={area.icon}
+                title={area.title}
+                description={area.description}
+              />
+            ))}
           </div>
         </div>
 
         <div className="mt-20 grid gap-4 lg:grid-cols-[1.4fr_0.6fr]">
-          {/* Main */}
-
           <Card className="relative overflow-hidden rounded-3xl border-white/[0.07] bg-[#0b0c11] p-7 sm:p-9">
             <div className="pointer-events-none absolute -right-20 -top-20 h-62.5 w-62.5 rounded-full bg-violet-600/[0.07] blur-[100px]" />
 
@@ -265,11 +214,7 @@ const ExperienceCard = ({ item }: { item: ExperienceItem }) => {
       </div>
 
       <Card className="group relative overflow-hidden rounded-3xl border-white/[0.07] bg-[#0b0c11] p-7 transition-all duration-500 hover:border-violet-400/20 sm:p-9">
-        {/* Background glow */}
-
         <div className="pointer-events-none absolute -right-25 -top-25 h-75 w-75 rounded-full bg-violet-600/4.5 blur-[110px] transition-all duration-700 group-hover:bg-violet-600/8" />
-
-        {/* Top */}
 
         <div className="relative flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
           <div>
@@ -333,8 +278,6 @@ const ExperienceCard = ({ item }: { item: ExperienceItem }) => {
           </div>
         </div>
 
-        {/* Bottom number */}
-
         <span className="pointer-events-none absolute bottom-6 right-8 font-mono text-[70px] font-semibold leading-none text-white/1.5">
           01
         </span>
@@ -346,8 +289,6 @@ const ExperienceCard = ({ item }: { item: ExperienceItem }) => {
 const EducationItem = () => {
   return (
     <div className="relative mt-16 grid gap-8 md:grid-cols-[180px_1fr]">
-      {/* Timeline */}
-
       <div className="relative">
         <div className="absolute -left-px top-3 hidden h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-[#06070b] md:flex">
           <div className="h-2 w-2 rounded-full bg-white/30" />
