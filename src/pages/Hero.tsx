@@ -2,10 +2,11 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { ArrowRight, Mail, MoveDown } from "lucide-react";
 import { SiGithub } from "react-icons/si";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 import { Button } from "../../components/ui/button";
+import ContactModal from "../components/ContactModal";
 
 const LinkedinIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
@@ -189,6 +190,7 @@ export function BuildingWith({ subjects }: BuildingWithProps) {
 }
 
 const Hero = () => {
+  const [contactOpen, setContactOpen] = useState(false);
   return (
     <section className="relative min-h-[calc(100vh-96px)]">
       <div className="mx-auto grid min-h-[calc(100vh-96px)] max-w-375 items-center px-7 lg:grid-cols-2 lg:px-12">
@@ -227,6 +229,7 @@ const Hero = () => {
             </Button>
 
             <Button
+              onClick={() => setContactOpen(true)}
               size="lg"
               variant="outline"
               className="h-11 rounded-lg border-white/15 bg-transparent px-5 text-sm text-white/80 hover:border-white/25 hover:bg-white/4 hover:text-white"
@@ -289,6 +292,7 @@ const Hero = () => {
           BUILT WITH PASSION&nbsp;&nbsp;•&nbsp;&nbsp;DEPLOYED WITH PURPOSE
         </p>
       </div>
+      <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
     </section>
   );
 };

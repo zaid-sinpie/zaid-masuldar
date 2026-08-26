@@ -3,8 +3,11 @@ import type { IconType } from "react-icons";
 
 import { Button } from "../../components/ui/button";
 import { socialLinks } from "../constants/contact";
+import { useState } from "react";
+import ContactModal from "../components/ContactModal";
 
 const Contact = () => {
+  const [contactOpen, setContactOpen] = useState(false);
   return (
     <section
       id="contact"
@@ -73,17 +76,13 @@ const Contact = () => {
           </p>
 
           <Button
+            onClick={() => setContactOpen(true)}
             size="lg"
             className="group mt-9 h-12 rounded-xl bg-violet-600 px-6 text-sm shadow-[0_0_40px_rgba(124,58,237,0.12)] transition-all duration-300 hover:bg-violet-500 hover:shadow-[0_0_50px_rgba(124,58,237,0.2)]"
           >
-            <a
-              href="mailto:zaidmasuldar@gmail.com"
-              className="flex justify-center items-center"
-            >
-              <Mail className="mr-2 h-4 w-4" />
-              Send me an email
-              <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            <Mail className="mr-2 h-4 w-4" />
+            Send me an email
+            <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Button>
 
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:gap-7">
@@ -167,6 +166,7 @@ const Contact = () => {
           <span className="h-px flex-1 bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
       </div>
+      <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
     </section>
   );
 };

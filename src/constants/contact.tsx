@@ -1,4 +1,3 @@
-import { Mail } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 
 const LinkedinIcon = ({ className }: { className?: string }) => (
@@ -21,10 +20,5 @@ export const socialLinks = [
     icon: SiGithub,
     label: "GitHub",
     href: "https://github.com/zaid-sinpie",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    href: "mailto:zaidmasuldar@gmail.com",
   },
 ];
