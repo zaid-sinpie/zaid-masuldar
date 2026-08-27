@@ -1,3 +1,4 @@
+import { CodeXml } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 
 const LinkedinIcon = ({ className }: { className?: string }) => (
@@ -20,5 +21,10 @@ export const socialLinks = [
     icon: SiGithub,
     label: "GitHub",
     href: "https://github.com/zaid-sinpie",
+  },
+  {
+    icon: CodeXml,
+    label: "Leet Code",
+    href: "https://leetcode.com/u/zaidmasuldar/",
   },
 ];

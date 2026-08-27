@@ -1,22 +1,12 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { MoveDown } from "lucide-react";
-import { SiGithub } from "react-icons/si";
 import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 import { Button } from "../../components/ui/button";
 import ContactModal from "../components/ContactModal";
-
-const LinkedinIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-    <rect x="0" y="0" width="24" height="24" rx="2" fill="currentColor" />
-    <path
-      fill="black"
-      d="M3.56 20.45h3.57V8.99H3.56v11.46ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM9.35 8.99v11.46h3.57v-5.67c0-1.49.28-2.94 2.13-2.94 1.82 0 1.85 1.71 1.85 3.04v5.57h3.56v-6.29c0-3.09-.66-5.46-4.26-5.46-1.73 0-2.89.95-3.37 1.85h-.05V8.99H9.35Z"
-    />
-  </svg>
-);
+import { socialLinks } from "../constants/contact";
 
 const NetworkSphere = () => {
   const groupRef = useRef<THREE.Group>(null);
@@ -250,23 +240,18 @@ const Hero = () => {
       </div>
 
       <div className="absolute right-7 top-1/2 z-30 hidden -translate-y-1/2 flex-col items-center gap-5 lg:flex">
-        <a
-          href="https://linkedin.com/in/zaid-masuldar"
-          aria-label="LinkedIn"
-          target="_blank"
-          className="text-white/35 transition-all duration-300 hover:-translate-y-0.5 hover:text-violet-400"
-        >
-          <LinkedinIcon className="h-4.25 w-4.25" />
-        </a>
-
-        <a
-          href="http://github.com/zaid-sinpie"
-          aria-label="GitHub"
-          target="_blank"
-          className="text-white/35 transition-all duration-300 hover:-translate-y-0.5 hover:text-violet-400"
-        >
-          <SiGithub className="h-4.25 w-4.25" />
-        </a>
+        {socialLinks.map(({ label, href, icon: Icon }) => (
+          <a
+            key={label}
+            href={href}
+            aria-label={label}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/35 transition-all duration-300 hover:-translate-y-0.5 hover:text-violet-400"
+          >
+            <Icon className="h-4.25 w-4.25" />
+          </a>
+        ))}
 
         <div className="mt-2 h-16 w-px bg-linear-to-b from-white/20 to-transparent" />
       </div>
