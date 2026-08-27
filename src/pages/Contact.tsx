@@ -1,7 +1,7 @@
 import { ArrowUpRight, Mail, MapPin, type LucideIcon } from "lucide-react";
 import type { IconType } from "react-icons";
 
-import { Button } from "../../components/ui/button";
+import { Button } from "../components/ui/button";
 import { socialLinks } from "../constants/contact";
 import { useState } from "react";
 import ContactModal from "../components/ContactModal";

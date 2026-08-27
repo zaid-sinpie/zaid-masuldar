@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 
-import { Card } from "../../components/ui/card";
+import { Card } from "../components/ui/card";
 import { projects, technologies } from "../constants/project";
 
 type Project = {

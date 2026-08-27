@@ -4,7 +4,7 @@ import { MoveDown } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
-import { Button } from "../../components/ui/button";
+import { Button } from "../components/ui/button";
 import ContactModal from "../components/ContactModal";
 import { socialLinks } from "../constants/contact";
 

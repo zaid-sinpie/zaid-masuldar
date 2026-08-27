@@ -1,4 +1,4 @@
-import { Card } from "../../components/ui/card";
+import { Card } from "../components/ui/card";
 import { Code2, type LucideIcon } from "lucide-react";
 
 import { skillCategories, skills } from "../constants/skills";
