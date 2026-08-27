@@ -56,7 +56,7 @@ export const projects: Project[] = [
   // },
   {
     number: "02",
-    title: "Chrome New Tab",
+    title: "Otaku Tab",
     description:
       "A highly customized new-tab experience with wallpapers, bookmarks, music controls, animated particles, color customization and canvas-based visual effects.",
     category: "Browser Experience",
