@@ -42,6 +42,12 @@ import { Button } from "../../components/ui/button";
 // };
 
 const Header = () => {
+  function openGoogleDoc() {
+    window.open(
+      "https://docs.google.com/document/d/1-d5aB_EMm4gD8xPXYXSvfXlWjt6nbNygVN5VhpCcOgA/edit?usp=sharing",
+      "_blank",
+    );
+  }
   return (
     <header className="relative z-50">
       <div className="mx-auto flex h-24 max-w-375 items-center justify-between px-7 lg:px-12">
@@ -51,6 +57,7 @@ const Header = () => {
         </a>
 
         <Button
+          onClick={openGoogleDoc}
           variant="outline"
           className="h-9 rounded-lg border-violet-500/50 bg-transparent px-4 text-xs text-white hover:border-violet-400 hover:bg-violet-500/8 hover:text-white"
         >

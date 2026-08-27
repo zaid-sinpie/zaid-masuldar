@@ -111,7 +111,7 @@ const Contact = () => {
               ))}
             </div>
             <a
-              href="/resume.pdf"
+              href="https://docs.google.com/document/d/1-d5aB_EMm4gD8xPXYXSvfXlWjt6nbNygVN5VhpCcOgA/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 text-xs text-white/30 transition-colors hover:text-white"
