@@ -1,9 +1,10 @@
 import {
   Globe,
-  Monitor,
-  SearchCode,
+  // Monitor,
+  // SearchCode,
   ShieldCheck,
   Sparkles,
+  Wifi,
   type LucideIcon,
 } from "lucide-react";
 
@@ -56,42 +57,6 @@ export const projects: Project[] = [
   // },
   {
     number: "02",
-    title: "Otaku Tab",
-    description:
-      "A highly customized new-tab experience with wallpapers, bookmarks, music controls, animated particles, color customization and canvas-based visual effects.",
-    category: "Browser Experience",
-    type: "Chrome Extension",
-    icon: Globe,
-    technologies: [
-      "JavaScript",
-      "Chrome APIs",
-      "Canvas",
-      "Animations",
-      "YouTube API",
-    ],
-  },
-  {
-    number: "03",
-    title: "Desktop Image Gallery",
-    description:
-      "A cross-platform desktop image gallery built with Electron and React, with a secure renderer-to-main process architecture and native desktop capabilities.",
-    category: "Desktop",
-    type: "Electron Application",
-    icon: Monitor,
-    technologies: ["Electron", "React", "Vite", "Context Bridge", "IPC"],
-  },
-  {
-    number: "04",
-    title: "Security Scanner",
-    description:
-      "A developer-focused security scanning application that integrates Semgrep to analyze source code and surface potential security issues through a web interface.",
-    category: "Developer Tools",
-    type: "Security Platform",
-    icon: SearchCode,
-    technologies: ["React", "Node.js", "Semgrep", "REST APIs", "Docker"],
-  },
-  {
-    number: "05",
     title: "Rent a Friend",
     description:
       "A full-stack social marketplace concept connecting people through configurable profiles and interaction workflows with a modern responsive interface.",
@@ -106,6 +71,45 @@ export const projects: Project[] = [
       "REST APIs",
     ],
     featured: true,
+    github: "https://github.com/zaid-sinpie/rent_a_friend",
+  },
+  {
+    number: "03",
+    title: "Otaku Tab",
+    description:
+      "A highly customized new-tab experience with wallpapers, bookmarks, music controls, animated particles, color customization and canvas-based visual effects.",
+    category: "Browser Experience",
+    type: "Chrome Extension",
+    icon: Globe,
+    technologies: [
+      "JavaScript",
+      "Chrome APIs",
+      "Canvas",
+      "Animations",
+      "YouTube API",
+    ],
+    github: "https://github.com/zaid-sinpie/OtakuTab",
+  },
+  // {
+  //   number: "03",
+  //   title: "Security Scanner",
+  //   description:
+  //     "A developer-focused security scanning application that integrates Semgrep to analyze source code and surface potential security issues through a web interface.",
+  //   category: "Developer Tools",
+  //   type: "Security Platform",
+  //   icon: SearchCode,
+  //   technologies: ["React", "Node.js", "Semgrep", "REST APIs", "Docker"],
+  // },
+  {
+    number: "04",
+    title: "ESP32 Wi-Fi Repeater",
+    description:
+      "A wireless networking project that configures an ESP32 as a Wi-Fi repeater, extending an existing network and providing connectivity through a dedicated ESP32 access point.",
+    category: "Embedded Systems",
+    type: "IoT / Hardware",
+    icon: Wifi,
+    technologies: ["ESP32", "Arduino", "C++", "Wi-Fi", "Embedded Systems"],
+    github: "https://github.com/zaid-sinpie/wifi_repeater_esp32",
   },
 ];
 

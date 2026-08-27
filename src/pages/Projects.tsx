@@ -146,7 +146,6 @@ const Projects = () => {
 
         <div className="mt-28">
           <div className="relative overflow-hidden rounded-3xl border border-white/[0.07] bg-[#0b0c11] px-7 py-10 sm:px-10">
-
             <div className="pointer-events-none absolute -right-20 top-1/2 h-70 w-70 -translate-y-1/2 rounded-full bg-violet-600/8 blur-[110px]" />
 
             <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-center">
@@ -289,8 +288,15 @@ const FeaturedProjectCard = ({ project }: { project: Project }) => {
 const ProjectRow = ({ project }: { project: Project }) => {
   const Icon = project.icon;
 
+  function openUrl(url: string) {
+    window.open(url, "_blank");
+  }
+
   return (
-    <div className="group relative grid gap-5 py-7 transition-colors duration-300 hover:bg-white/1 md:grid-cols-[80px_1fr_auto] md:items-center">
+    <div
+      onClick={() => project.github && openUrl(project.github)}
+      className="group relative grid gap-5 py-7 transition-colors duration-300 hover:bg-white/1 md:grid-cols-[80px_1fr_auto] md:items-center"
+    >
       <div className="flex items-center gap-3">
         <span className="font-mono text-[10px] text-violet-400/50">
           {project.number}
