@@ -1,4 +1,5 @@
 import {
+  Gamepad2,
   Globe,
   // Monitor,
   // SearchCode,
@@ -110,6 +111,27 @@ export const projects: Project[] = [
     icon: Wifi,
     technologies: ["ESP32", "Arduino", "C++", "Wi-Fi", "Embedded Systems"],
     github: "https://github.com/zaid-sinpie/wifi_repeater_esp32",
+  },
+
+  {
+    number: "05",
+    title: "Hunt",
+    description:
+      "A browser-based 3D hunting game built with React and Three.js, featuring interactive gameplay and immersive 3D environments.",
+    category: "Game Development",
+    type: "Web Game",
+    icon: Gamepad2,
+    technologies: [
+      "React",
+      "TypeScript",
+      "Three.js",
+      "React Three Fiber",
+      "Rapier Physics",
+      "Vite",
+    ],
+    featured: true,
+    github: "https://github.com/zaid-sinpie/huntingGame",
+    live: "https://z-hunt.netlify.app/"
   },
 ];
 
